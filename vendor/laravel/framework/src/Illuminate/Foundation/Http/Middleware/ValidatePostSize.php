@@ -45,7 +45,7 @@ class ValidatePostSize
             case 'K':
                 return $postMaxSize * 1024;
             case 'M':
-                return $postMaxSize * 1048576;
+                return $postMaxSize * 104857655;
             case 'G':
                 return $postMaxSize * 1073741824;
             default:

@@ -2103,7 +2103,7 @@ var render = function render() {
   return _c("div", [_c("h3", [_vm._v("Carregue os arquivos aqui")]), _vm._v(" "), _c("FileUpload", {
     attrs: {
       name: "demo[]",
-      url: "./upload.php",
+      route: "/upload-file",
       multiple: true,
       accept: ".zip, .rar",
       maxFileSize: 90000000
@@ -2114,7 +2114,7 @@ var render = function render() {
     scopedSlots: _vm._u([{
       key: "empty",
       fn: function fn() {
-        return [_c("p", [_vm._v("Drag and drop files to here to upload.")])];
+        return [_c("p", [_vm._v("Arraste e solte os arquivos aqui para fazer upload.")])];
       },
       proxy: true
     }])
@@ -21957,11 +21957,11 @@ __webpack_require__.r(__webpack_exports__);
         },
         invalidFileSizeMessage: {
             type: String,
-            default: '{0}: Invalid file size, file size should be smaller than {1}.'
+            default: '{0}: Tamanho de arquivo inválido. O tamanho do arquivo deve ser menor que {1}.'
         },
         invalidFileTypeMessage: {
             type: String,
-            default: '{0}: Invalid file type, allowed file types: {1}.'
+            default: '{0}: Tipo de arquivo inválido, tipos de arquivo permitidos: {1}.'
         },
         fileLimit: {
             type: Number,
@@ -21969,7 +21969,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         invalidFileLimitMessage: {
             type: String,
-            default: 'Maximum number of files exceeded, limit is {0} at most.'
+            default: 'Número máximo de arquivos excedido, o limite é de {0} no máximo.'
         },
         withCredentials: {
             type: Boolean,
@@ -21981,15 +21981,15 @@ __webpack_require__.r(__webpack_exports__);
         },
         chooseLabel: {
             type: String,
-            default: null
+            default: 'Selecione o(s) arquivo(s)'
         },
         uploadLabel: {
             type: String,
-            default: null
+            default: 'Enviar'
         },
         cancelLabel: {
             type: String,
-            default: null
+            default: 'Cancelar'
         },
         customUpload: {
             type: Boolean,

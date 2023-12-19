@@ -3,9 +3,9 @@
     <div>
 
         <h3>Carregue os arquivos aqui</h3>
-        <FileUpload name="demo[]" url="./upload.php" @upload="onUpload" :multiple="true" accept=".zip, .rar" :maxFileSize="90000000">
+        <FileUpload name="demo[]"  route="/upload-file" @upload="onUpload" :multiple="true" accept=".zip, .rar" :maxFileSize="90000000">
             <template #empty>
-                <p>Drag and drop files to here to upload.</p>
+                <p>Arraste e solte os arquivos aqui para fazer upload.</p>
             </template>
         </FileUpload>
        
