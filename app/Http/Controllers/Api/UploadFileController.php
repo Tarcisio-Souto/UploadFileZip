@@ -9,7 +9,7 @@ class UploadFileController extends Controller
 {
     public function getArchives(Request $req) {
 
-        dd($req->all());
+        return response()->json(['success' => $req->all()]);
 
     }
 }

@@ -3,7 +3,7 @@
     <div>
 
         <h3>Carregue os arquivos aqui</h3>
-        <FileUpload name="demo[]"  route="/upload-file" @upload="onUpload" :multiple="true" accept=".zip, .rar" :maxFileSize="90000000">
+        <FileUpload name="demo[]" url="api/upload-files" :customUpload="true" @uploader="onAdvancedUpload" :multiple="true" accept=".zip, .rar" :maxFileSize="90000000">
             <template #empty>
                 <p>Arraste e solte os arquivos aqui para fazer upload.</p>
             </template>
@@ -21,11 +21,32 @@ import FileUpload from 'primevue/fileupload';
         components: {
             FileUpload
         },
-        methods: {
-            onUpload() {
-                this.$toast.add({severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000});
+            setup() {
+
+                const onAdvancedUpload = async (event) => {
+                const files = event.files;
+
+                console.log('opa', files)
+
+                
+
+
+
+                const imgUpload = await fetch("api/upload-files", {
+                    method: "POST",
+                    body: files,
+                });
+
+                if (imgUpload) {
+                    //console.log(imgUpload);
+                    
+                }
+                };
+                return {
+                    onAdvancedUpload,
+                };
+
             }
-        }
     }
 
 </script>
